@@ -16,7 +16,7 @@
   "_resolution": {
     "type": "version",
     "tag": "1.0.2",
-    "commit": "dc2acd3795ca85ab971818c45e39741f83e6cc28"
+    "commit": "911faa6e606ffe4dcfbc87626adff6797a505742"
   },
   "_source": "git://github.com/elmarburke/pouch-ng.git",
   "_target": "*"
