@@ -1,0 +1,23 @@
+{
+  "name": "pouchdb-ng",
+  "version": "1.0.2",
+  "main": "pouchdb-ng.js",
+  "ignore": [
+    "example",
+    ".idea",
+    ".git"
+  ],
+  "dependencies": {
+    "pouchdb": "http://download.pouchdb.com/pouchdb-nightly.min.js"
+  },
+  "devDependencies": {},
+  "homepage": "https://github.com/elmarburke/pouch-ng",
+  "_release": "1.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.2",
+    "commit": "dc2acd3795ca85ab971818c45e39741f83e6cc28"
+  },
+  "_source": "git://github.com/elmarburke/pouch-ng.git",
+  "_target": "*"
+}

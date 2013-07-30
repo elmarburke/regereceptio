@@ -1,0 +1,11 @@
+{
+  "name": "pouchdb",
+  "_cacheHeaders": {
+    "Last-Modified": "Tue, 30 Jul 2013 21:01:34 GMT",
+    "Content-Length": "68424",
+    "Content-Type": "application/x-javascript"
+  },
+  "main": "index.js",
+  "_source": "http://download.pouchdb.com/pouchdb-nightly.min.js",
+  "_target": "*"
+}
