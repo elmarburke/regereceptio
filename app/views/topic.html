@@ -1,0 +1,83 @@
+<div class="row dont-show-grid">
+  <div class="col-sm-4 col-push-8">
+    <form name="addTopicForm" class="form-horizontal">
+      <fieldset>
+        <legend>Neues Thema</legend>
+        <div class="form-group">
+          <label for="newTopic" class="control-label col-lg-2">Title</label>
+          <div class="col-lg-10">
+            <input class="form-control"
+                   type="text" 
+                   ng-model="newTopic"
+                   id="newTopic"
+                   required>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-10 col-offset-2">
+            <button ng-disabled="!addTopicForm.$valid" 
+                    ng-click="addTopic(newTopic)"
+                    class="btn btn-default">
+              Hinzufügen
+            </button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+    <form name="searchForm">
+      <fieldset>
+        <legend>Suche</legend>
+        <div class="form-group">
+          <label for="inputSearch" class="control-label col-lg-2">Volltext</label>
+          <div class="col-lg-10">
+            <input class="form-control"
+                   id="inputSearch"
+                   type="text"
+                   ng-model="search">
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  
+  <div class="col-sm-8 col-pull-4">
+    <ul>
+      <div class="list-group">
+        <li class="list-group-item active" ng-repeat="topic in topics | orderBy: 'position' | filter: search">
+          <h4 class="list-group-item-heading">{{topic.title}}</h4>
+          <p class="list-group-item-text">{{topic.body}}</p>
+          <div class="btn-group">
+            <a href="/topic/{{topic._id}}/edit"
+               class="btn btn-default btn-small">
+              <span class="glyphicon glyphicon-pencil"></span>
+            </a>
+            <button type="button"
+                    class="btn btn-danger btn-small"
+                    ng-click="delete($index, topic._id, topic._rev)">
+              <span class="glyphicon glyphicon-remove"></span>
+            </button><!--
+            <button type="button"
+                    class="btn btn-default btn-small"
+                    ng-click="decreasePosition($index)"
+                    ng-disabled="$index == 0">
+              <span class="glyphicon glyphicon-chevron-up"></span>
+            </button>
+            <button type="button"
+                    class="btn btn-default btn-small"
+                    ng-click="increasePosition($index)"
+                    ng-disabled="$index == topics.length-1">
+              <span class="glyphicon glyphicon-chevron-down"></span>
+            </button>-->
+          </div>
+        </li> <!-- /.list-group-item -->
+      </div> <!-- /.list-group -->
+    </ul>
+    <div>
+      <small>
+        <span ng-show="search">Die Suche ist aktiv. </span>
+        <span ng-hide="!topics.length">Insgesamt sind {{topics.length}} Einträge vorhanden.</span>
+        <span ng-show="!topics.length">Insgesamt sind keine Einträge vorhanden.</span>
+      </small>
+    </div>
+  </div>
+</div>

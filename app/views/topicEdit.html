@@ -1,0 +1,62 @@
+<div class="row">
+  <pre class="col-12">{{topic}}</pre>
+  <div class="col-12">
+    <form class="form-horizontal" name="editTopicForm">
+      <fieldset>
+        <div class="row">
+          <legend class="col-12">Bearbeiten von {{topic.title}}</legend>
+          
+          <div class="form-group">
+            <label for="inputTitle" class="col-lg-2 control-label">
+              Titel
+            </label>
+            <div class="col-lg-10 controls">
+              <input class="form-control"
+                     type="text"
+                     id="inputTitle"
+                     placeholder="Titel"
+                     ng-model="topic.title"
+                     required>
+            </div>
+          </div>
+        
+          <div class="form-group">
+            <label for="textareaBody" class="col-lg-2 control-label">
+              Beschreibung
+            </label>
+            <div class="col-lg-10">
+              <textarea class="form-control"
+                        id="textareaBody"
+                        placeholder="Beschreibung"
+                        ng-model="topic.body">
+              </textarea>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="inputPosition" class="col-lg-2 control-label">
+              Position
+            </label>
+            <div class="col-lg-10">
+              <input class="form-control"
+                     type="number"
+                     id="inputPosition"
+                     ng-model="topic.position">
+            </div>
+          </div>
+        
+          <div class="form-group">
+            <div class="col-lg-10 col-offset-2">
+              <button type="submit"
+                      class="btn btn-default"
+                      ng-click="save()"
+                      ng-disabled="!editTopicForm.$valid">
+                Speichern
+              </button>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div> <!-- /.col-12 -->
+</div> <!-- /.row -->
