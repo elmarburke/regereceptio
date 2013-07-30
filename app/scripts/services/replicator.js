@@ -23,8 +23,8 @@ angular.module('regereceptioApp')
       $store.bind($rootScope, 'replicators');
       localReplicator.forEach(function (item) {
         replicator.startSync(item.remoteDb, item.options);
-      })
-    }
+      });
+    };
     
     replicator.startSync = function (remoteDb, options) {
       pouch.replicate.to(remoteDb, options);

@@ -10,7 +10,7 @@ angular.module('regereceptioApp')
     $scope.addTopic = function(topicTitle) {
       var doc = {
         _id: Math.uuid(),
-        type: "topic",
+        type: 'topic',
         title: topicTitle,
         position: ($scope.topics.length + 1) * 10
       };

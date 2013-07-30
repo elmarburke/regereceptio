@@ -13,10 +13,10 @@ angular.module('regereceptioApp')
       .then(function (data) {
         console.log(data);
         if (data.ok) {
-          $location.path("/topic");
+          $location.path('/topic');
         } else {
-          throw new Error("Data don't saved. " + JSON.stringify(data));
+          throw new Error('Data don\'t saved. ' + JSON.stringify(data));
         }
       });
-    }
+    };
   });

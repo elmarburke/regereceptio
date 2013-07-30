@@ -2,7 +2,7 @@
 
 angular.module('regereceptioApp')
   .controller('NavigationCtrl', function ($scope, $location) {
-    $scope.title = "Regereceptio";
+    $scope.title = 'Regereceptio';
     
     $scope.entries = [{
       title: 'Home',

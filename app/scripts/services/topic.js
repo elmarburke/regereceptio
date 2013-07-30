@@ -1,3 +1,4 @@
+/* jshint camelcase: false */
 'use strict';
 
 angular.module('regereceptioApp')
@@ -8,7 +9,7 @@ angular.module('regereceptioApp')
     /* Private functions */
     
     function mapTopics (doc) {
-      if (doc.type && doc.type === "topic") {
+      if (doc.type && doc.type === 'topic') {
         emit(doc._id, doc.title);
       }
     }
@@ -23,14 +24,14 @@ angular.module('regereceptioApp')
         });
         
         return rows;
-      })
-    }
+      });
+    };
     
     topicClient.put = pouch.put;
     
     topicClient.changed = function (callback) {
       var filterFunction = function (doc, req) {
-        if ((doc.type && doc.type === "topic") || doc._deleted === true) {
+        if ((doc.type && doc.type === 'topic') || doc._deleted === true) {
           return true;
         } else {
           return false;
@@ -51,5 +52,5 @@ angular.module('regereceptioApp')
     
     topicClient.remove = pouch.remove;
     
-    return topicClient
+    return topicClient;
   });
