@@ -2,10 +2,7 @@ body {
   padding-top: 70px;
 }
 
-.show-grid {
-  margin-bottom: 15px;
-}
-.show-grid [class^="col-"] {
+.show-grid [class*="col-"] {
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: #eee;

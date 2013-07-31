@@ -225,7 +225,7 @@ module.exports = function (grunt) {
             'CNAME',
             'bower_components/**/*',
             'images/{,*/}*.{gif,webp,svg}',
-            'styles/fonts/*'
+            'fonts/*'
           ]
         }, {
           expand: true,
