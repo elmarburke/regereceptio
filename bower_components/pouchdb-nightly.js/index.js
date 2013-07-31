@@ -1,4 +1,4 @@
-// pouchdb.nightly - 2013-07-30T21:01:25
+// pouchdb.nightly - 2013-07-31T02:01:34
 
 (function() {
  // BEGIN Math.uuid.js
@@ -1963,11 +1963,13 @@ var arrayFirst = function(arr, callback) {
 var filterChange = function(opts) {
   return function(change) {
     var req = {};
+    var hasFilter = opts.filter && typeof opts.filter === 'function';
+
     req.query = opts.query_params;
-    if (opts.filter && !opts.filter.call(this, change.doc, req)) {
+    if (opts.filter && hasFilter && !opts.filter.call(this, change.doc, req)) {
       return false;
     }
-    if (opts.doc_ids && opts.doc_ids.indexOf(change.id) !== -1) {
+    if (opts.doc_ids && opts.doc_ids.indexOf(change.id) === -1) {
       return false;
     }
     if (!opts.include_docs) {
@@ -2055,7 +2057,6 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     Crypto: Crypto,
     call: call,
-    yankError: yankError,
     isLocalId: isLocalId,
     isAttachmentId: isAttachmentId,
     parseDoc: parseDoc,
@@ -3543,20 +3544,16 @@ var HttpPouch = function(opts, callback) {
       if (res && res.results) {
         results.last_seq = res.last_seq;
         // For each change
-        var hasFilter = opts.filter && typeof opts.filter === 'function';
         var req = {};
         req.query = opts.query_params;
         res.results = res.results.filter(function(c) {
           leftToFetch--;
-          if (opts.aborted || hasFilter && !opts.filter.apply(this, [c.doc, req])) {
-            return false;
+          var ret = filterChange(opts)(c);
+          if (ret) {
+            results.results.push(c);
+            call(opts.onChange, c);
           }
-          results.results.push(c);
-          if (opts.doc_ids && opts.doc_ids.indexOf(c.id) !== -1) {
-            return false;
-          }
-          call(opts.onChange, c);
-          return true;
+          return ret;
         });
       }
 
