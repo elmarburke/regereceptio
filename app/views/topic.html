@@ -1,4 +1,4 @@
-<div class="row dont-show-grid">
+<div class="row">
   <div class="col-sm-4 col-push-8">
     <form name="addTopicForm" class="form-horizontal">
       <fieldset>
@@ -41,11 +41,13 @@
   </div>
   
   <div class="col-sm-8 col-pull-4">
-    <ul>
       <div class="list-group">
-        <li class="list-group-item active" ng-repeat="topic in topics | orderBy: 'position' | filter: search">
+        <div class="list-group-item active" ng-repeat="topic in topics | orderBy: 'position' | filter: search">
           <h4 class="list-group-item-heading">{{topic.title}}</h4>
-          <p class="list-group-item-text">{{topic.body}}</p>
+          <div class="list-group-item-text">
+            <p>{{topic.body}}</p>
+            <p>Sendung: {{topic.episode}}</p>
+          </div>
           <div class="btn-group">
             <a href="/topic/{{topic._id}}/edit"
                class="btn btn-default btn-small">
@@ -55,23 +57,10 @@
                     class="btn btn-danger btn-small"
                     ng-click="delete($index, topic._id, topic._rev)">
               <span class="glyphicon glyphicon-remove"></span>
-            </button><!--
-            <button type="button"
-                    class="btn btn-default btn-small"
-                    ng-click="decreasePosition($index)"
-                    ng-disabled="$index == 0">
-              <span class="glyphicon glyphicon-chevron-up"></span>
             </button>
-            <button type="button"
-                    class="btn btn-default btn-small"
-                    ng-click="increasePosition($index)"
-                    ng-disabled="$index == topics.length-1">
-              <span class="glyphicon glyphicon-chevron-down"></span>
-            </button>-->
           </div>
-        </li> <!-- /.list-group-item -->
+        </div> <!-- /.list-group-item -->
       </div> <!-- /.list-group -->
-    </ul>
     <div>
       <small>
         <span ng-show="search">Die Suche ist aktiv. </span>

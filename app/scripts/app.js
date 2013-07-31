@@ -24,6 +24,10 @@ angular.module('regereceptioApp', ['pouchdb-ng', 'localStorage'])
         templateUrl: 'views/episode/index.html',
         controller: 'EpisodeIndexCtrl'
       })
+      .when('/episode/:episode_name', {
+        templateUrl: 'views/episode/detail.html',
+        controller: 'EpisodeDetailCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
