@@ -31,7 +31,7 @@ angular.module('regereceptioApp')
     
     topicClient.changed = function (callback) {
       var filterFunction = function (doc, req) {
-        if ((doc.type && doc.type === 'topic') || doc._deleted === true) {
+        if ((doc.type && doc.type === 'topic') || doc._deleted == true) {
           return true;
         } else {
           return false;

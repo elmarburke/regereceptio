@@ -23,7 +23,7 @@ angular.module('regereceptioApp')
       $scope.$apply(function() {
         var indexOfChange = $scope.topics.indexOfObject('_id', change.doc._id);
         
-        if(indexOfChange.length === 0) {
+        if(indexOfChange.length === 0 && !(change.deleted)) {
           // No items foud, so we push the array
           $scope.topics.push(change.doc);
         }
