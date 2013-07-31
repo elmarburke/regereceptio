@@ -16,9 +16,17 @@ angular.module('regereceptioApp', ['pouchdb-ng', 'localStorage'])
         templateUrl: 'views/topicEdit.html',
         controller: 'TopiceditCtrl'
       })
-      .when('/replicate/', {
+      .when('/replicate', {
         templateUrl: 'views/replicate/index.html',
         controller: 'ReplicateIndexCtrl'
+      })
+      .when('/episode', {
+        templateUrl: 'views/episode/index.html',
+        controller: 'EpisodeIndexCtrl'
+      })
+      .when('/episode/:episode_name', {
+        templateUrl: 'views/episode/detail.html',
+        controller: 'EpisodeDetailCtrl'
       })
       .otherwise({
         redirectTo: '/'

@@ -11,8 +11,11 @@ angular.module('regereceptioApp')
       title: 'Topics',
       href: '/topic'
     }, {
+      title: 'Episodes',
+      href: '/episode'
+    }, {
       title: 'Replicate',
-      href: '/replicate/'
+      href: '/replicate'
     }];
     
     $scope.location = $location;
