@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-12">
+    <h1>Themen der Sendung {{episodeName}}</h1>
+  </div>
+  
+  <div class="col-12">
+    <div class="list-group">
+      <div class="list-group-item active" ng-repeat="topic in topics | orderBy: 'position' | filter: search">
+        <h4 class="list-group-item-heading">{{topic.title}}</h4>
+        <div class="list-group-item-text">
+          <p>{{topic.body}}</p>
+        </div>
+        <div class="btn-group">
+          <a href="/topic/{{topic._id}}/edit" class="btn btn-default btn-small">
+            <span class="glyphicon glyphicon-pencil"></span>
+          </a>
+          <button type="button" class="btn btn-danger btn-small" ng-click="delete($index, topic._id, topic._rev)">
+            <span class="glyphicon glyphicon-remove"></span>
+          </button>
+        </div>
+      </div> <!-- /.list-group-item -->
+    </div> <!-- /.list-group -->
+  </div>
+  
+</div>
