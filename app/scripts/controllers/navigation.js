@@ -1,20 +1,20 @@
 'use strict';
 
 angular.module('regereceptioApp')
-  .controller('NavigationCtrl', function ($scope, $location) {
+  .controller('NavigationCtrl', function ($scope, $location, replicator) {
     $scope.title = 'Regereceptio';
     
     $scope.entries = [{
-      title: 'Home',
+      title: 'Start',
       href: '/'
     }, {
-      title: 'Topics',
+      title: 'Themen',
       href: '/topic'
     }, {
-      title: 'Episodes',
+      title: 'Sendungen',
       href: '/episode'
     }, {
-      title: 'Replicate',
+      title: 'Synchronisieren',
       href: '/replicate'
     }];
     

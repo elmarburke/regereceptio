@@ -1,6 +1,17 @@
 <div class="row">
-  <ul class="list-group col-12 col-sm-6 col-lg-3">
-    <li class="list-group-item" ng-repeat="episode in episodes">
+  <div class="page-header col-12">
+    <h1>Sendungen</h1>
+  </div>
+  <div class="col-12">
+    <p class="lead">
+      Alle Sendungen, die in mindestens einem Thema erwähnt wurden, werden hier aufgelistet. Neue Sendungen werden einfach durch erwähnen des Sendungstitels angelegt.
+      <br>
+      Die Liste ist alphabetisch nach Sendungsnamen Sortiert.
+    </p>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item col-12 col-sm-6 col-lg-3"
+        ng-repeat="episode in episodes">
       <a ng-href="/episode/{{episode.key}}/">
         {{episode.key}} <span class="badge pull-right">{{episode.value}}</span>
       </a>
