@@ -9,6 +9,10 @@ files = [
   JASMINE_ADAPTER,
   'app/bower_components/angular/angular.js',
   'app/bower_components/angular-mocks/angular-mocks.js',
+  'app/bower_components/pouchdb-nightly.js/index.js',
+  'app/bower_components/pouchdb-ng/pouchdb-ng.js',
+  'app/bower_components/angular-localStorage/src/localFactory.js',
+  'app/bower_components/angular-cookies/angular-cookies.js',
   'app/scripts/*.js',
   'app/scripts/**/*.js',
   'test/mock/**/*.js',
@@ -36,7 +40,7 @@ colors = true;
 logLevel = LOG_INFO;
 
 // enable / disable watching file and executing tests whenever any file changes
-autoWatch = false;
+autoWatch = true;
 
 // Start these browsers, currently available:
 // - Chrome
@@ -46,10 +50,10 @@ autoWatch = false;
 // - Safari (only Mac)
 // - PhantomJS
 // - IE (only Windows)
-browsers = ['Chrome'];
+browsers = ['Firefox'];
 
 // If browser does not capture in given timeout [ms], kill it
-captureTimeout = 5000;
+captureTimeout = 10000;
 
 // Continuous Integration mode
 // if true, it capture browsers, run tests and exit

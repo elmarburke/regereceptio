@@ -31,18 +31,23 @@
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
     
-    <nav class="navbar navbar-fixed-top" ng-controller="NavigationCtrl">
+    <nav class="navbar navbar-fixed-top"
+         role="navigation"
+         ng-controller="NavigationCtrl">
       <div class="container">
         
-        <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/" ng-bind="title"></a>
+          </div>
         
-        <a class="navbar-brand" href="/" ng-bind="title"></a>
-        <div class="nav-collapse collapse navbar-responsive-collapse">
+        
+        <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li ng-repeat="entry in entries" ng-class='{active: entry.href == location.path()}'>
               <a ng-href="{{entry.href}}" ng-bind="entry.title" ng-click="makeActive($index)"></a>
@@ -72,7 +77,7 @@
         <script src="bower_components/angular-resource/angular-resource.js"></script>
         <script src="bower_components/angular-cookies/angular-cookies.js"></script>
         <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-        <script src="bower_components/angular-localStorage/src/localFactory.js"></script>
+        <script src="bower_components/angular-localStorage/src/localStorage.js"></script>
         <script src="bower_components/pouchdb-ng/pouchdb-ng.js"></script>
         <script src="scripts/controllers/topic.js"></script>
         <script src="scripts/services/topic.js"></script>

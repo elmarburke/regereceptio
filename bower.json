@@ -12,7 +12,7 @@
     "pouchdb-ng": "git://github.com/elmarburke/pouch-ng",
     "pouchdb-nightly.js": "http://download.pouchdb.com/pouchdb-nightly.js",
     "angular-localStorage": "git://github.com/agrublev/Angular-localStorage.git",
-    "bootstrap": "~3.0.0-rc1"
+    "bootstrap": "~3.0.0-rc.2"
   },
   "devDependencies": {
     "angular-mocks": "~1.0.7",
