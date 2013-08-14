@@ -6,10 +6,13 @@ angular.module('regereceptioApp')
       replicator.addSync(remoteDb, newReplicate);
     };
     $scope.resetDatabase = function () {
+      
+      if ($window.confirm('Alle Daten werden gelöscht und die Seite neu geladen.')) {
         pouchClient.destroy('regereceptio')
         .then(function(data) {
-            $window.alert("Reload!");
             $window.location.href = '/replicate'
         });
+      }
+      
     }
   });
