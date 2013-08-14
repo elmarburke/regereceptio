@@ -5,7 +5,7 @@
   
   <div class="col-12">
     <div class="list-group">
-      <div class="list-group-item active" ng-repeat="topic in topics | orderBy: 'position' | filter: search">
+      <div class="list-group-item" ng-repeat="topic in topics | orderBy: 'position' | filter: search">
         <h4 class="list-group-item-heading">{{topic.title}}</h4>
         <div class="list-group-item-text">
           <p>{{topic.body}}</p>

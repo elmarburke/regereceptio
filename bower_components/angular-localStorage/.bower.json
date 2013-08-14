@@ -1,6 +1,6 @@
 {
   "name": "angular-localStorage",
-  "main": "src/localFactory.js",
+  "main": "src/localStorage.js",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -16,11 +16,11 @@
     "angular-mocks": "~1.0.7"
   },
   "homepage": "https://github.com/agrublev/Angular-localStorage",
-  "_release": "74b4248195",
+  "_release": "acca2133cc",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "74b4248195de18954ca50dc7a87bbc19f1862e50"
+    "commit": "acca2133cc91055084259da97b2d553b66eea27a"
   },
   "_source": "git://github.com/agrublev/Angular-localStorage.git",
   "_target": "*"
