@@ -6,24 +6,27 @@ angular.module('regereceptioApp')
     
     replicator.addSync = function (remoteDb, options) {
       if (options.continuous) {
-        // save config to localStorage
-        var localReplicator = $store.get('replicators') || [];
-        localReplicator.push({
+        $rootScope.replicators.push({
           'remoteDb': remoteDb,
           'options': options
         });
-        $store.set('replicators', localReplicator);
       }
       
       replicator.startSync(remoteDb, options);
     };
     
+    replicator.removeSync = function (index) {
+      $rootScope.replicators = $rootScope.replicators.slice(index, 0);
+    };
+    
     var autostartSync = function () {
-      var localReplicator = $store.get('replicators') || [];
+      
       $store.bind($rootScope, 'replicators');
-      localReplicator.forEach(function (item) {
+      
+      $rootScope.replicators.forEach(function (item) {
         replicator.startSync(item.remoteDb, item.options);
       });
+      
     };
     
     replicator.startSync = function (remoteDb, options) {

@@ -79,6 +79,10 @@
       <dt>Andauernd</dt>
       <dd ng-show="replicator.options.continuous">Ja</dd>
       <dd ng-show="!replicator.options.continuous">Nein</dd>
+      <dt>Aktionen</dt>
+      <dd><button class="btn btn-danger btn-xs" ng-click="removeReplicator($index)">
+        <span class="glyphicon glyphicon-remove"></span>
+      </button></dd>
     </dl>
   </div>
   
