@@ -23,6 +23,10 @@ angular.module('regereceptioApp')
       
       $store.bind($rootScope, 'replicators');
       
+      if(typeof $rootScope.replicators !== 'object') {
+        $rootScope.replicators = [];
+      }
+      
       $rootScope.replicators.forEach(function (item) {
         replicator.startSync(item.remoteDb, item.options);
       });
