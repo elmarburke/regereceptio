@@ -16,7 +16,7 @@ angular.module('regereceptioApp')
     };
     
     replicator.removeSync = function (index) {
-      $rootScope.replicators = $rootScope.replicators.slice(index, 0);
+      $rootScope.replicators.splice(index, 1);
     };
     
     var autostartSync = function () {

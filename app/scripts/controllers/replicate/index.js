@@ -5,6 +5,8 @@ angular.module('regereceptioApp')
     
     $scope.replicateTo = function (remoteDb, newReplicate) {
       replicator.addSync(remoteDb, newReplicate);
+      $scope.remoteDB = '';
+      $scope.newReplicate.continuous = false;
     };
     
     $scope.resetDatabase = function () {

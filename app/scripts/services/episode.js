@@ -18,7 +18,10 @@ angular.module('regereceptioApp')
         reduce: true
       };
       
-      return pouch.query({map: episodesMap, reduce: '_count'}, options);
+      return pouch.query({map: episodesMap, reduce: '_count'}, options)
+        .then(function (data) {
+          return data.rows;
+        });
     }
     
     episode.allTopicsOfAnEpisode = function (episodeName) {

@@ -40,8 +40,6 @@ angular.module('regereceptioApp')
     });
     
     $scope.delete = function (index, id, rev) {
-      //$scope.topics.splice(index, 1);
-      
       topic.remove({
         _id: id,
         _rev: rev
