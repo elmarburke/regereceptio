@@ -2,7 +2,7 @@
   "name": "Regereceptio",
   "description": "Podcast Made Easy! Enjoy podcasting! - Regereceptio",
   "launch_path": "/",
-  "appcache_path": "/my.appcache"
+  "appcache_path": "/my.appcache",
   "icons": {
     "128": ""
   },
