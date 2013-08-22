@@ -1,0 +1,14 @@
+{
+  "name": "Regereceptio",
+  "description": "Podcast Made Easy! Enjoy podcasting! - Regereceptio",
+  "launch_path": "/",
+  "appcache_path": "/my.appcache"
+  "icons": {
+    "128": ""
+  },
+  "developer": {
+    "name": "Elmar Burke",
+    "url": "http://elmarburke.de"
+  },
+  "default_locale": "de"
+}
