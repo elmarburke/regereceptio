@@ -9,11 +9,10 @@
       Die Liste ist alphabetisch nach Sendungsnamen Sortiert.
     </p>
   </div>
-  <ul class="list-group">
-    <li class="list-group-item col-12 col-sm-6 col-lg-3" ng-repeat="episode in episodes">
-      <a ng-href="/episode/{{episode.key}}/">
+  <div class="list-group">
+      <a ng-href="/episode/{{episode.key}}/" class="list-group-item col-12 col-sm-6 col-lg-3" ng-repeat="episode in episodes">
         {{episode.key}} <span class="badge pull-right">{{episode.value}}</span>
       </a>
-    </li>
-  </ul>
+    
+  </div>
 </div>

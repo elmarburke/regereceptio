@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" manifest="my.appcache"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -15,7 +15,7 @@
     <base href="/">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="styles/39569bff.main.css">
+        <link rel="stylesheet" href="styles/1db4c981.main.css">
 </head>
   <body ng-app="regereceptioApp">
     <!--[if lt IE 7]>
@@ -27,21 +27,21 @@
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
     
-    <nav class="navbar navbar-fixed-top" role="navigation" ng-controller="NavigationCtrl">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="NavigationCtrl">
       <div class="container">
         
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
             <a class="navbar-brand" href="/" ng-bind="title"></a>
           </div>
         
         
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse navbar-main">
           <ul class="nav navbar-nav">
             <li ng-repeat="entry in entries" ng-class="{active: entry.href == location.path()}">
               <a ng-href="{{entry.href}}" ng-bind="entry.title" ng-click="makeActive($index)"></a>
@@ -58,8 +58,8 @@
 
     <script src="scripts/58aa7728.scripts.js"></script>
 
-        <script src="scripts/5396e33a.plugins.js"></script>
+        <script src="scripts/ada07232.plugins.js"></script>
 
-        <script src="scripts/d59b4445.modules.js"></script>
+        <script src="scripts/1733ef80.modules.js"></script>
 </body>
 </html>
